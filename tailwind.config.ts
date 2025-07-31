@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'romantic': ['Dancing Script', 'cursive'],
+				'poppins': ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom romantic colors
+				'romantic-purple': 'hsl(var(--romantic-purple))',
+				'romantic-purple-light': 'hsl(var(--romantic-purple-light))',
+				'romantic-purple-dark': 'hsl(var(--romantic-purple-dark))',
+				'love-pink': 'hsl(var(--love-pink))',
+				'love-pink-light': 'hsl(var(--love-pink-light))',
+				'love-pink-soft': 'hsl(var(--love-pink-soft))',
+				'heart-red': 'hsl(var(--heart-red))',
+				'sparkle-gold': 'hsl(var(--sparkle-gold))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

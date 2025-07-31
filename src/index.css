@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Romantic Design System - Purple & Pink Love Theme */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Romantic Purple & Pink Palette */
+    --background: 320 45% 95%;
+    --foreground: 280 25% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 320 60% 98%;
+    --card-foreground: 280 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 320 60% 98%;
+    --popover-foreground: 280 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep romantic purple */
+    --primary: 280 60% 35%;
+    --primary-foreground: 320 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft pink accent */
+    --secondary: 330 70% 85%;
+    --secondary-foreground: 280 40% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 320 30% 92%;
+    --muted-foreground: 280 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Love pink */
+    --accent: 340 80% 75%;
+    --accent-foreground: 280 40% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 320 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 320 25% 88%;
+    --input: 320 25% 90%;
+    --ring: 280 60% 45%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom romantic colors */
+    --romantic-purple: 280 70% 45%;
+    --romantic-purple-light: 285 60% 65%;
+    --romantic-purple-dark: 275 80% 25%;
+    
+    --love-pink: 340 85% 70%;
+    --love-pink-light: 345 90% 85%;
+    --love-pink-soft: 330 70% 92%;
+    
+    --heart-red: 350 85% 65%;
+    --sparkle-gold: 45 90% 70%;
+
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(var(--romantic-purple)) 0%, hsl(var(--love-pink)) 100%);
+    --gradient-love: linear-gradient(45deg, hsl(var(--love-pink-light)) 0%, hsl(var(--romantic-purple-light)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--love-pink-soft)) 0%, hsl(320 60% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-romantic: 0 20px 40px -12px hsl(var(--romantic-purple) / 0.25);
+    --shadow-love: 0 10px 30px -5px hsl(var(--love-pink) / 0.3);
+    --shadow-heart: 0 0 20px hsl(var(--heart-red) / 0.4);
+
+    /* Animations */
+    --transition-magical: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +129,159 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+    background: var(--gradient-romantic);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Romantic Typography */
+  .font-romantic {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Magical Animations */
+  .typewriter {
+    border-right: 3px solid hsl(var(--heart-red));
+    animation: typewriter 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--heart-red)); }
+  }
+
+  .float-heart {
+    animation: float-heart 3s ease-in-out infinite;
+  }
+
+  @keyframes float-heart {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+  }
+
+  .pulse-love {
+    animation: pulse-love 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-love {
+    0%, 100% { 
+      transform: scale(1);
+      box-shadow: var(--shadow-heart);
+    }
+    50% { 
+      transform: scale(1.1);
+      box-shadow: 0 0 30px hsl(var(--heart-red) / 0.6);
+    }
+  }
+
+  .sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.7; transform: scale(1) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+  }
+
+  .love-card-enter {
+    animation: love-card-enter 0.8s ease-out forwards;
+  }
+
+  @keyframes love-card-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(50px) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .confetti-fall {
+    animation: confetti-fall 3s ease-out forwards;
+  }
+
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  /* Beautiful Button Variants */
+  .btn-romantic {
+    background: var(--gradient-love);
+    color: hsl(var(--primary-foreground));
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    border: none;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: var(--shadow-romantic);
+    transition: var(--transition-magical);
+    cursor: pointer;
+  }
+
+  .btn-romantic:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-love);
+  }
+
+  .btn-heart {
+    background: hsl(var(--heart-red));
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    box-shadow: var(--shadow-heart);
+  }
+
+  .btn-heart:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 40px hsl(var(--heart-red) / 0.8);
+  }
+
+  /* Love Card Styles */
+  .love-card {
+    background: var(--gradient-card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-romantic);
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-magical);
+    backdrop-filter: blur(10px);
+  }
+
+  .love-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-love);
+  }
+
+  /* Romantic Text Styles */
+  .text-gradient {
+    background: var(--gradient-romantic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
