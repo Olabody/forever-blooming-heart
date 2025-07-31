@@ -42,7 +42,7 @@ export const TypewriterText = ({
   }, []);
 
   return (
-    <span className={className}>
+    <span className={`text-muted-foreground ${className}`}>
       {displayText}
       {showCursor && (
         <span className="inline-block w-1 bg-heart-red ml-1 animate-pulse">|</span>
