@@ -27,7 +27,7 @@ export const LoveMessageCard = ({
   if (!isVisible) return null;
 
   return (
-    <div className="love-card love-card-enter mb-6 transform transition-all duration-500 hover:scale-105">
+    <div className="love-card love-card-enter love-card-glow mb-6 transform transition-all duration-500 hover:scale-105">
       <div className="flex items-start space-x-4">
         <div className="text-4xl flex-shrink-0 animate-pulse">
           {icon}

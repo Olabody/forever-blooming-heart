@@ -13,29 +13,34 @@ const Index = () => {
 
   const loveMessages = [
     {
-      message: "You are the sunshine that brightens my darkest days and the moonlight that guides me through the night. 🌙",
-      icon: "🌟",
+      message: "I still can't believe I get to call you mine. You've become such a big part of my life — not just in the happy moments, but in the quiet ones too. Just knowing you're there makes everything feel lighter.",
+      icon: "💌",
       delay: 3000
     },
     {
-      message: "Every moment with you feels like a beautiful dream that I never want to wake up from. ✨",
-      icon: "💫",
+      message: "You make ordinary things feel special. Whether it's just talking, laughing at random stuff, or sitting in silence, being with you has shown me what peace feels like.",
+      icon: "💌",
       delay: 4500
     },
     {
-      message: "Your smile is my favorite view, your laugh is my favorite sound, and your love is my favorite feeling. 😊",
-      icon: "😍",
+      message: "I love how you understand the parts of me I didn't even know needed understanding. You see through the noise and still choose me — that means more than I can put into words.",
+      icon: "💌",
       delay: 6000
     },
     {
-      message: "You make ordinary moments extraordinary just by being in them. Thank you for being you. 🎈",
-      icon: "🦋",
+      message: "I don't need grand adventures to feel happy — just you. The way you care, the way you listen, the way you love… it's more than I ever hoped for.",
+      icon: "💌",
       delay: 7500
     },
     {
-      message: "In a world full of temporary things, you are my forever. Happy Girlfriend's Day, beautiful! 💍",
-      icon: "👑",
+      message: "You've been my calm in chaos, my reason when things feel unsure. I've never felt more seen, more valued, more me than I do when I'm with you.",
+      icon: "💌",
       delay: 9000
+    },
+    {
+      message: "Loving you hasn't just changed my life — it's changed me. You've helped me grow without even realizing it. And for that, I'm forever grateful.",
+      icon: "💌",
+      delay: 10500
     }
   ];
 
@@ -57,9 +62,9 @@ const Index = () => {
         {/* Main Title Section */}
         <div className="text-center mb-12 max-w-4xl">
           {showMainTitle && (
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-romantic font-bold text-gradient mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-romantic font-bold mb-6" style={{ color: 'hsl(320 40% 92%)' }}>
               <TypewriterText
-                text="Happy Girlfriend's Day 💖"
+                text="Happy Girlfriend's Day Morenikeji 💖"
                 speed={120}
                 onComplete={() => setTitleComplete(true)}
               />
@@ -68,9 +73,6 @@ const Index = () => {
           
           {titleComplete && (
             <div className="love-card-enter">
-              <p className="text-xl md:text-2xl font-poppins text-foreground opacity-90 mb-8">
-                To the most amazing person in my world ✨
-              </p>
               
               <div className="flex justify-center space-x-6 text-4xl mb-8">
                 <span className="sparkle">💕</span>
@@ -95,14 +97,6 @@ const Index = () => {
               />
             ))}
             
-            {/* Final special message */}
-            <div style={{ marginTop: '2rem' }}>
-              <LoveMessageCard
-                message="You are my heart, my soul, my everything. Thank you for making life so beautiful, my love. 💖👑✨"
-                icon="🌹"
-                delay={10500}
-              />
-            </div>
           </div>
         )}
       </div>

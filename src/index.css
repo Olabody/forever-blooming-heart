@@ -62,6 +62,7 @@
     --shadow-romantic: 0 20px 40px -12px hsl(var(--romantic-purple) / 0.25);
     --shadow-love: 0 10px 30px -5px hsl(var(--love-pink) / 0.3);
     --shadow-heart: 0 0 20px hsl(var(--heart-red) / 0.4);
+    --shadow-glow: 0 0 30px hsl(var(--love-pink) / 0.4), 0 0 60px hsl(var(--romantic-purple) / 0.2);
 
     /* Animations */
     --transition-magical: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -274,7 +275,11 @@
 
   .love-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: var(--shadow-love);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .love-card-glow {
+    box-shadow: var(--shadow-glow);
   }
 
   /* Romantic Text Styles */
