@@ -62,7 +62,7 @@ const Index = () => {
         {/* Main Title Section */}
         <div className="text-center mb-12 max-w-4xl">
           {showMainTitle && (
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-romantic font-bold mb-6" style={{ color: 'hsl(320 40% 92%)' }}>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-romantic font-bold mb-6" style={{ color: 'white' }}>
               <TypewriterText
                 text="Happy Girlfriend's Day Morenikeji 💖"
                 speed={120}
