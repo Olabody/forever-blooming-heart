@@ -9,7 +9,7 @@ export const PulsingHeart = ({
         <span className="text-3xl">💖</span>
         
         {/* Hover tooltip */}
-        <div className="absolute bottom-full right-0 mb-2 px-3 py-2 border border-love-pink-light rounded-lg opacity-100 transition-opacity whitespace-nowrap font-poppins text-sm bg-red-500">
+        <div className="absolute bottom-full right-0 mb-2 px-3 py-2 border border-love-pink-light rounded-lg opacity-100 transition-opacity whitespace-nowrap font-poppins text-sm bg-[hsl(var(--heart-red))] text-white">
           Click me! 💕
         </div>
         
