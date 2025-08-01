@@ -279,7 +279,11 @@
   }
 
   .love-card-glow {
-    box-shadow: var(--shadow-glow);
+    box-shadow: 
+      0 0 20px hsl(var(--love-pink) / 0.5),
+      0 0 40px hsl(var(--romantic-purple) / 0.3),
+      0 0 60px hsl(var(--love-pink) / 0.2),
+      var(--shadow-romantic);
   }
 
   /* Romantic Text Styles */
