@@ -37,7 +37,8 @@ export const LoveMessageCard = ({
             <TypewriterText
               text={message}
               speed={50}
-              className="text-lg font-poppins text-foreground leading-relaxed"
+              className="text-lg font-poppins leading-relaxed"
+              style={{ color: 'hsl(275 80% 25%)' }}
             />
           ) : (
             <div className="h-6 bg-muted animate-pulse rounded"></div>

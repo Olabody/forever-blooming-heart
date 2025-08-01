@@ -5,13 +5,15 @@ interface TypewriterTextProps {
   speed?: number;
   onComplete?: () => void;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export const TypewriterText = ({ 
   text, 
   speed = 100, 
   onComplete, 
-  className = "" 
+  className = "",
+  style
 }: TypewriterTextProps) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,7 +44,7 @@ export const TypewriterText = ({
   }, []);
 
   return (
-    <span className={`text-white ${className}`}>
+    <span className={`text-white ${className}`} style={style}>
       {displayText}
       {showCursor && (
         <span className="inline-block w-1 bg-heart-red ml-1 animate-pulse">|</span>
